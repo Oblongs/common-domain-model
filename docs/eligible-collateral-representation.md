@@ -6,21 +6,21 @@ title: Eligible Collateral Representation
 
 Within collateral documentation, it is common to detail what assets you
 will exchange with your counterparties, i.e., what you deem eligible
-collateral. Such information is found in bilateral legal document,
-custodian triparty agreements and is also used for other purposes where
+collateral. Such information is found in bilateral legal documents,
+custodian triparty agreements, and is also used for other purposes where
 defining whether an asset is eligible to be used as collateral to
 mitigate risk on a defined set (portfolio) of financial instruments
 between parties.
 
 Data requirements to represent eligible collateral include common
-information such as, asset descriptors e.g. who issues the asset, the
+information such as asset descriptors (e.g. who issues the asset), the
 asset type, its maturity profile, any related agency credit risk rating,
 and if any collateral haircut is to be applied to the asset's value.
 
 Within legal collateral documents, the definition of eligible collateral
 can take several forms; some may want to list assets and the related
-eligibility information in table-format using common language, use
-textual description of types of eligible assets, or use common
+eligibility information in a tabular format using common language, use
+textual description of types of eligible assets, or list common
 identifiers and taxonomies. However, it is evident for each method
 chosen there is no common data standard to express the same information
 for all the data attributes used.
@@ -33,7 +33,7 @@ regulations under various jurisdictions has presented several challenges
 for defining collateral asset economic identity, correct categorisation
 and application of specified haircuts and concentration limits. Having
 no common standards in place to represent the key data has led to
-lengthy negotiation, misinterpretation, lack of interoperability and
+lengthy negotiation, misinterpretation, lack of interoperability, and
 downstream operational inefficiency.
 
 # Eligible Collateral in the CDM
@@ -88,7 +88,7 @@ Derivatives with a focus on uncleared margin rules. In addition, the
 approach is intended to also be used to express collateral eligibility
 for other industry workflows such as Securities Lending, Repo and
 Exchange Traded Derivatives (ETD). The model foundations, broad range of
-attributes and functions has been constructed with this in mind and can
+attributes and functions, have been constructed with this in mind and can
 be extended further to operate to wider processes.
 
 The common data requirements have been established through industry
@@ -105,10 +105,10 @@ principle, these can be divided into the following categories:
 -   Concentrations Limits
 -   Treatments Functions
 
-The data attributes within the model provides the flexibility to firstly
+The data attributes within the model provide the flexibility to firstly
 identify the collateral issuer and asset class, then define its maturity
 if relevant, then apply treatment rules for any chosen haircut
-percentages, concentration limits and inclusion or exclusion conditions.
+percentages, concentration limits, and inclusion or exclusion conditions.
 The combination of these terms allows a wide range of collateral and
 associated data for eligibility to be represented.
 
@@ -120,9 +120,9 @@ a standard means of identifying as much of this collateral universe as
 possible initially and then extend the model further as required via
 open-source contributions under the CDM governance structure.
 
-At the outset, there have been no common standards for describing
+Until now, there have been no common standards for describing
 collateral; the foundational structure in the CDM provides a means to
-identify a majority of collateral issuers and covers a wide range of
+identify the majority of collateral issuers and covers a wide range of
 asset types that are commonly seen in eligible collateral data.
 
 The approach in the CDM is to adopt a similar method to the 'Animal
@@ -139,8 +139,8 @@ An illustrative example for understanding the principle is shown here:
 ![image](/img/collateral-asset-identifier-tree.png)
 
 The CDM method for representing eligible collateral will be capable of
-reference to, and inclusion in, common master and respective collateral
-documentation for OTC Derivatives and non- OTC master agreements
+reference to, and inclusion in, common master agreements and respective collateral
+documentation for OTC Derivatives and non-OTC master agreements
 (notably Repo and Securities Lending) and potentially for OTC Cleared
 and Exchange Traded Derivatives. For this reason, it is important that
 the CDM is able to accommodate Regulatory Uncleared Margin Rules
@@ -149,26 +149,27 @@ concepts that are relevant but the model should not prescribed by them.
 Although the industry will benefit from using a digital standard to
 describe collateral, there is also a need to recognise that market
 participants may want to identify eligible collateral without fully
-describing every feature and instead use industry identifiers, where
+describing every feature and instead just use industry identifiers, where
 available. Thus, the CDM also provides a means that collateral issuers
 can be identified using common legal entity identifiers such as an LEI.
-Similarly, asset types can be identified using a product ID such as ISIN
-or CUSIP or a standard taxonomy source.
+Similarly, specific assets can be identified using a product identifier such as an ISIN
+or CUSIP, or a standard taxonomy source.
 
 ## High Level Design Principles
 
-The foundational data structure from the highest level allows firstly to
-represent eligibility through specification of *criteria*:
+The highest level of the model is the definition of an Eligible collateral Specification
+which is a set of collateral *criteria* agreed between two parties.  The *criteria* 
+defines a list of one or more instances of collateral which make up the agreement. 
 
 ![image](/img/cdm-graphical-ecs.png)
 
-The Asset type is used to specify criteria related to the nature of the
+Asset Criteria is used to specify criteria related to the nature of the
 asset, such as its type (cash, debt, equity, or other), its country of
-origin or its denominated currency.
+origin, or its denominated currency.
 
-The Issuer type is used to specify criteria related to the issuer of the
+Issuer Criteria is used to specify criteria related to the issuer of the
 asset, such the type of issuer (government, corporate, etc), specific
-issuer name, or agency rating
+issuer name, or agency rating.
 
 Treatment is used to specify the valuation percentage, any concentration
 limits and or specific inclusion or exclusion conditions, which
